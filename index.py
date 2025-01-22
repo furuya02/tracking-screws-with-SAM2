@@ -155,16 +155,6 @@ def main():
         masks = np.squeeze(masks).astype(bool)
 
         ################################################################
-        # マスクデータから透過画像とセグメンテーション用のデータを生成する
-        ################################################################
-        # mask_util = MaskUtil(masks, frame)
-        # cv2.imwrite(
-        #     f"{PNG_PATH}/{BASE_NAME}_{frame_idx:05}.png", mask_util.transparent_image
-        # )
-        # with open(f"{TXT_PATH}/{BASE_NAME}_{frame_idx:05}.txt", mode="w") as f:
-        #     f.write(mask_util.text)
-
-        ################################################################
         # 検出領域をマスクした画像を表示（動作確認用）
         ################################################################
         annotated_frame = annotator.set_mask(frame, masks, object_ids)
